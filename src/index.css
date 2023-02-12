@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Nav bar animation */
+#link {
+	position: relative;
+}
+#link:after {
+	bottom: -4px;
+	content: '';
+	display: block;
+	height: 2px;
+	left: 0;
+	position: absolute;
+	background: #363853;
+	opacity: 0.6;
+	transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+	width: 0;
+}
+#link:hover:after {
+	width: 100%;
+	opacity: 0.9;
+}
+
+/* Menu toogle */
+
+.button-three {
+	--button-color: black;
+	overflow: hidden;
+}
+
+.button-three .hamburger {
+	transition: translate 1s, rotate 1s;
+}
+
+.button-three[aria-expanded='true'] .hamburger {
+	translate: 10px -10px;
+	rotate: 0.125turn;
+}
+
+.button-three .line {
+	transition: 1s;
+	stroke-dasharray: 60 31 60 300;
+}
+
+.button-three[aria-expanded='true'] .line {
+	stroke-dasharray: 60 105 60 300;
+	stroke-dashoffset: -90;
+}

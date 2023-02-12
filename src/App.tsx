@@ -1,11 +1,20 @@
+import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Blog from './pages/Blog';
 
 const App = () => {
-	const [count, setCount] = useState(0);
-
 	return (
 		<>
-			<p className=' bg-orange-600'>Welcome me Universe</p>
+			<Routes>
+				<Route path='/' element={<Navbar/>}>
+					<Route index element={<Home/>} />
+					<Route path='projects' element={<Projects/>} />
+					<Route path='blog' element={<Blog/>} />
+				</Route>
+			</Routes>
 		</>
 	);
 };
