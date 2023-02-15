@@ -20,7 +20,7 @@ const Typed = () => {
 			style={{
 				fontSize: '1.4em',
 				fontFamily: 'Raleway',
-				fontWeight: 400,
+				fontWeight: 500,
 				marginLeft: `${window.innerWidth < 484 ? '1rem' : 0}`,
 			}}
 		/>

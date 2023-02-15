@@ -5,10 +5,11 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-                Raleway: ['"Raleway"', 'sans-serif'],
-                Ubuntu: ['Ubuntu', 'sans-serif'],
-                sans: ['Montserrat', 'sans-serif'],
-            }
+				Raleway: ['Raleway', 'sans-serif'],
+				Poppins: ['Poppins', 'sans-serif'],
+				Ubuntu: ['Ubuntu', 'sans-serif'],
+				sans: ['Montserrat', 'sans-serif'],
+			},
 		},
 	},
 	plugins: [],
