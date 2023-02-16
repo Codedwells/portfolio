@@ -1,6 +1,10 @@
 import { TypeAnimation } from 'react-type-animation';
 
-const Typed = () => {
+type propType = {
+	color: string;
+};
+
+const Typed = ({ color }:propType) => {
 	return (
 		<TypeAnimation
 			sequence={[
@@ -20,6 +24,7 @@ const Typed = () => {
 			style={{
 				fontSize: '1.4em',
 				fontFamily: 'Raleway',
+				color,
 				fontWeight: 500,
 				marginLeft: `${window.innerWidth < 484 ? '1rem' : 0}`,
 			}}
