@@ -106,7 +106,7 @@ const Home = () => {
 						</p>
 					</div>
 
-					<p className='hidden md:flex items-center justify-center absolute h-[8rem] -bottom-[6rem] left-0 bg-gradient-to-r from-[#1E1F44] to-[#3D41DA] w-full'>
+					<p className='hidden md:flex items-center justify-center absolute h-[9rem] -bottom-[6rem] left-0 bg-gradient-to-r from-[#1E1F44] to-[#3D41DA] w-full'>
 						<Typed color={'white'} />
 					</p>
 				</article>
@@ -114,11 +114,11 @@ const Home = () => {
 
 			<section className='md:mt-[10rem]  '>
 				<div className='md:mx-12 lg:mx-[20rem]'>
-					<h2 className='pl-4 md:pl-0 text-[2.4rem] font-[700] md:text-[3rem] md:text-center'>
+					<h2 className='text-[#1f2045] pl-4 md:pl-0 text-[2.4rem] font-[700] md:text-[3rem] md:text-center'>
 						My tools
 					</h2>
 
-					<div className='grid gap-4 grid-cols-3 md:grid-cols-4  p-4 mt-8'>
+					<div className='grid gap-4 grid-cols-3 place-items-center  md:grid-cols-4  p-4 mt-8'>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={js} alt='javascript' />
 							<a className='hover:text-blue-600 font-Raleway' href=''>
@@ -203,15 +203,15 @@ const Home = () => {
 					</p>
 				</div>
 
-				<h2 className='text-[2.4rem] mt-[6rem] px-6 font-[700] md:text-[3rem] md:text-center'>
+				<h2 className='text-[2.4rem] mt-[6rem] px-6 text-[#1f2045] font-[700] md:text-[3rem] md:text-center'>
 					Projects
 				</h2>
+				<p className='px-[1.5rem] md:text-center font-[500] text-2xl mt-4 text-[#1f2045] font-Raleway'>Here are some of the projects I've worked on.</p>
 
-				<article className='absolute'>
+				<article className='absolute -mt-[3rem]'>
 					<svg
-						className='rotate-[0deg] text-[#bdf5e1] relative top-[2px]'
-						stroke='currentColor'
-						fill='currentColor'
+						className='rotate-[180deg] z-10  relative top-[6.2rem]'
+						fill='white'
 						xmlns='http://www.w3.org/2000/svg'
 						version='1.1'
 						width='100%'
@@ -221,7 +221,23 @@ const Home = () => {
 					>
 						<path d='M0,101 C15,100 35,50 50,50 L50,50 C65,50 85,100 100,100 Z'></path>
 					</svg>
-					<div className='relative py-10 px-2 w-screen bg-[#bdf5e1]'>
+					<div className='relative py-28 px-2 w-screen projects'>
+						<Project
+							title='BoostCTR'
+							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
+							liveLink='http://boostctr.io'
+							github='github'
+							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing.'
+							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
+						/>
+						<Project
+							title='BoostCTR'
+							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
+							liveLink='http://boostctr.io'
+							github='github'
+							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing.'
+							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
+						/>
 						<Project
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
@@ -240,14 +256,13 @@ const Home = () => {
 						/>
 					</div>
 					<svg
-						className='rotate-[180deg] text-[#bdf5e1] relative bottom-[2px]'
-						stroke='currentColor'
-						fill='currentColor'
+						className='rotate-[360deg]  relative bottom-[6.2rem]'
+						fill='white'
 						xmlns='http://www.w3.org/2000/svg'
 						version='1.1'
 						width='100%'
 						height='100'
-						viewBox='50 20 50 80'
+						viewBox='0 20 50 80'
 						preserveAspectRatio='none'
 					>
 						<path d='M0,103 C15,100 35,50 50,50 L50,50 C65,50 85,100 100,100 Z'></path>
