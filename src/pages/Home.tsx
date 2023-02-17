@@ -32,7 +32,7 @@ const Home = () => {
 					<p className='mt-6 px-4 md:px-0 text-[1.5em] font-[500] md:ml-0  font-Raleway whitespace-normal'>
 						I'm a developer. I solve problems using code.
 					</p>
-					<Typed color={'black'} />
+					<Typed color={'black'} seque={'stack'} />
 					<div className='flex flex-wrap gap-4 mt-4 pl-4 lg:pr-0 md:pl-0 md:justify-center lg:justify-start'>
 						<a
 							className='border-2 p-2 md:p-3 rounded-full hover:border-slate-300 active:border-slate-500'
@@ -107,7 +107,7 @@ const Home = () => {
 					</div>
 
 					<p className='hidden md:flex items-center justify-center absolute h-[9rem] -bottom-[6rem] left-0 bg-gradient-to-r from-[#1E1F44] to-[#3D41DA] w-full'>
-						<Typed color={'white'} />
+						<Typed color={'white'} seque={'world'} />
 					</p>
 				</article>
 			</div>
@@ -206,9 +206,11 @@ const Home = () => {
 				<h2 className='text-[2.4rem] mt-[6rem] px-6 text-[#1f2045] font-[700] md:text-[3rem] md:text-center'>
 					Projects
 				</h2>
-				<p className='px-[1.5rem] md:text-center font-[500] text-2xl mt-4 text-[#1f2045] font-Raleway'>Here are some of the projects I've worked on.</p>
+				<p className='px-[1.5rem] md:text-center font-[500] text-2xl mt-4 text-[#1f2045] font-Raleway'>
+					Here are some of the projects I've worked on.
+				</p>
 
-				<article className='absolute -mt-[3rem]'>
+				<article className='relative -mt-[3rem]'>
 					<svg
 						className='rotate-[180deg] z-10  relative top-[6.2rem]'
 						fill='white'
@@ -268,6 +270,64 @@ const Home = () => {
 						<path d='M0,103 C15,100 35,50 50,50 L50,50 C65,50 85,100 100,100 Z'></path>
 					</svg>
 				</article>
+			</section>
+
+			<section className='flex flex-col lg:flex-row md:justify-center -mt-[4rem] lg:space-x-4 md:p-6'>
+				<div className=' flex flex-col items-center lg:w-[40%] p-1'>
+					<p className='font-[700] w-full px-3 text-4xl md:text-center lg:text-left lg:text-5xl text-[#1f2045]'>
+						Contact me
+					</p>
+					<p className='mt-[1.2rem] px-4 md:px-0 md:text-center lg:text-left lg:font-[500] md:text-xl text-[#1f2045] md:max-w-[42rem] lg:max-w-[36rem]'>
+						Hello there! Have a question, comment, or just want to say hello? I
+						would love to hear from you. Please fill out the form below and drop
+						me a line, and I'll get back to you as soon as possible."
+					</p>
+				</div>
+
+				<div className='mt-6 px-8 mb-[3rem] lg:mt-0'>
+					<form action='' className='flex flex-col space-y-4'>
+						<div className='flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:space-x-4 '>
+							<input
+								type='text'
+								name='name'
+								id='name'
+								placeholder='Name'
+								className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
+							/>
+							<input
+								type='text'
+								name='email'
+								id='email'
+								placeholder='Email'
+								className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
+							/>
+						</div>
+						<input
+							type='text'
+							name='name'
+							id='name'
+							placeholder='Subject'
+							className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
+						/>
+						<textarea
+							name='message'
+							id='message'
+							cols={30}
+							rows={10}
+							placeholder='Your message'
+							className='p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent  focus:border-l-blue-500 '
+						/>
+
+						<div className='mx-auto '>
+							<button
+								type='submit'
+								className='text-white font-Raleway bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-[600] rounded-lg text-lg  px-5 py-2.5 text-center mr-2 mb-2 w-[16rem]'
+							>
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
 			</section>
 		</>
 	);
