@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import '../index.css';
+
 import icon from '../assets/icon.svg';
+import email from '../assets/email-svgrepo-com.svg';
 
 const Navbar = () => {
 	const [opened, setOpened] = useState<boolean>(false);
@@ -50,9 +52,9 @@ const Navbar = () => {
 					>
 						<path
 							className='line'
-							stroke-width='10'
-							stroke-linecap='round'
-							stroke-linejoin='round'
+							strokeWidth='10'
+							strokeLinecap='round'
+							strokeLinejoin='round'
 							d='m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70'
 						></path>
 					</svg>
@@ -94,6 +96,16 @@ const Navbar = () => {
 			</nav>
 
 			<Outlet />
+
+			<footer className=' bg-[#f1f5f9] text-center p-3'>
+				<div className='flex flex-col md:flex-row mt-2 items-center justify-center text-center md:space-x-6'>
+					<div className='flex space-x-2'>
+						<img width={'19px'} src={email} alt='email me' />
+						<a href='mailto:abel@abeldev.site' className=' hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] '>abel@abeldev.site</a>
+					</div>
+					<p>&copy; 2023 </p>
+				</div>
+			</footer>
 		</>
 	);
 };

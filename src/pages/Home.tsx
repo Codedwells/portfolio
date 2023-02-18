@@ -1,5 +1,4 @@
 import heroImage from '../assets/hero.jpeg';
-import { useEffect } from 'react';
 import Typed from '../components/Typed';
 
 import hashnode from '../assets/hashnode-icon-svgrepo-com.svg';
@@ -20,7 +19,7 @@ import github2 from '../assets/github.png';
 import Project from '../components/Project';
 
 const Home = () => {
-	useEffect(() => {});
+	
 	return (
 		<>
 			<section className='flex items-center justify-center flex-col-reverse lg:flex-row  md:space-x-12'>
@@ -106,9 +105,9 @@ const Home = () => {
 						</p>
 					</div>
 
-					<p className='hidden md:flex items-center justify-center absolute h-[9rem] -bottom-[6rem] left-0 bg-gradient-to-r from-[#1E1F44] to-[#3D41DA] w-full'>
+					<div className='hidden md:flex items-center justify-center absolute h-[9rem] -bottom-[6rem] left-0 bg-gradient-to-r from-[#1E1F44] to-[#3D41DA] w-full'>
 						<Typed color={'white'} seque={'world'} />
-					</p>
+					</div>
 				</article>
 			</div>
 
@@ -228,8 +227,8 @@ const Home = () => {
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
-							github='github'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing.'
+							github=''
+							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
 							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 						<Project
@@ -237,7 +236,7 @@ const Home = () => {
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
 							github='github'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing.'
+							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
 							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 						<Project
@@ -245,7 +244,7 @@ const Home = () => {
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
 							github='github'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing.'
+							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
 							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 						<Project
@@ -253,7 +252,7 @@ const Home = () => {
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
 							github='github'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing.'
+							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
 							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 					</div>
@@ -280,11 +279,11 @@ const Home = () => {
 					<p className='mt-[1.2rem] px-4 md:px-0 md:text-center lg:text-left lg:font-[500] md:text-xl text-[#1f2045] md:max-w-[42rem] lg:max-w-[36rem]'>
 						Hello there! Have a question, comment, or just want to say hello? I
 						would love to hear from you. Please fill out the form below and drop
-						me a line, and I'll get back to you as soon as possible."
+						me a line, and I'll get back to you as soon as possible.
 					</p>
 				</div>
 
-				<div className='mt-6 px-8 mb-[3rem] lg:mt-0'>
+				<div className='mt-6 px-8 mb-[3rem]'>
 					<form action='' className='flex flex-col space-y-4'>
 						<div className='flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:space-x-4 '>
 							<input
@@ -293,8 +292,9 @@ const Home = () => {
 								id='name'
 								placeholder='Name'
 								className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
-							/>
+								/>
 							<input
+								autoComplete='false'
 								type='text'
 								name='email'
 								id='email'

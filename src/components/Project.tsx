@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 type projectProps = {
 	title: string;
 	techStack: string;
@@ -30,16 +31,16 @@ const Projects = ({
 					className=' mt-4 max-w-[700px] font-[500] whitespace-normal'
 					style={{ wordWrap: 'break-word' }}
 				>
-					{shortDesc}
+					{shortDesc},<Link to={'./projects'} className="text-slate-700 hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] "> more...</Link>
 				</p>
 
 				<div className='flex items-center mt-4'>
 					{liveLink && (
-						<a href={liveLink}>
+						<a href={liveLink} target={'_blank'}>
 							<svg
 								stroke='currentColor'
 								fill='currentColor'
-								stroke-width='0'
+								strokeWidth='0'
 								viewBox='0 0 24 24'
 								height='1em'
 								width='1em'
@@ -54,12 +55,12 @@ const Projects = ({
 					)}
 					{github && (
 						<div className='flex -space-x-1 items-center'>
-							<a href={github}>
+							<a href={github} target={'_blank'}>
 								<svg
 									className=' w-8'
 									stroke='currentColor'
 									fill='currentColor'
-									stroke-width='0'
+									strokeWidth='0'
 									viewBox='0 0 24 24'
 									height='1em'
 									width='1em'
