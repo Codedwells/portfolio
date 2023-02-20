@@ -36,7 +36,7 @@ const Typed = ({ color, seque }: propType) => {
 			cursor={true}
 			repeat={Infinity}
 			style={{
-				fontSize:seque === 'world'? '2rem':'1.4rem',
+				fontSize: seque === 'world' ? '2rem' : '1.4rem',
 				fontFamily: 'Raleway',
 				color,
 				fontWeight: 500,

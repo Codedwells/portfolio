@@ -247,7 +247,6 @@ const Home = () => {
 							liveLink='http://boostctr.io'
 							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
 						/>
-						
 					</div>
 					<svg
 						className='rotate-[360deg]  relative bottom-[6.2rem]'

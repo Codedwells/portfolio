@@ -62,7 +62,7 @@ const Navbar = () => {
 				<ul
 					className={`absolute ${
 						opened ? 'flex' : 'hidden'
-					} flex-col border-b border-t  items-center justify-center space-y-4 text-xl top-[70px] left-0 right-0 bottom-[40%] bg-white md:flex md:border-none md:space-y-0 md:text-base md:flex-row md:static md:space-x-8 md:items-center transition-all duration-1000 ease-in-out`}
+					} flex-col border-b border-t z-20 items-center justify-center space-y-4 text-xl top-[70px] left-0 right-0 bottom-[40%] bg-white md:flex md:border-none md:space-y-0 md:text-base md:flex-row md:static md:space-x-8 md:items-center transition-all duration-1000 ease-in-out`}
 				>
 					<li
 						onClick={showMenu}
@@ -76,15 +76,16 @@ const Navbar = () => {
 						id='link'
 						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
 					>
-						About
+						Resume
 					</li>
 					<li
 						onClick={showMenu}
 						id='link'
 						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
 					>
-						Resume
+						Contact
 					</li>
+
 					<li
 						onClick={showMenu}
 						id='link'
@@ -97,11 +98,16 @@ const Navbar = () => {
 
 			<Outlet />
 
-			<footer className=' bg-[#f1f5f9] text-center p-1 md:p-3'>
+			<footer className='text-sm font-[700] font-Raleway text-[#1f2045] bg-[#f1f5f9] text-center p-1 md:p-3'>
 				<div className='flex flex-col md:flex-row mt-2 items-center justify-center text-center md:space-x-6'>
 					<div className='flex space-x-2'>
 						<img width={'19px'} src={email} alt='email me' />
-						<a href='mailto:abel@abeldev.site' className=' hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] '>abel@abeldev.site</a>
+						<a
+							href='mailto:abel@abeldev.site'
+							className=' hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] '
+						>
+							abel@abeldev.site
+						</a>
 					</div>
 					<p>&copy; 2023 </p>
 				</div>
