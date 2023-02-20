@@ -44,6 +44,7 @@ const Projects = () => {
 					/>
 					<Project
 						title='BoostCTR'
+						github='github.com'
 						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 						liveLink='http://boostctr.io'
 						images={[project1, project1, project1, project1]}
@@ -54,6 +55,7 @@ const Projects = () => {
 					/>
 					<Project
 						title='BoostCTR'
+						github='github.com'
 						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 						liveLink='http://boostctr.io'
 						images={[project1, project1, project1, project1]}
