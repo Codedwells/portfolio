@@ -1,5 +1,6 @@
 import heroImage from '../assets/hero.jpeg';
 import Typed from '../components/Typed';
+import Project from '../components/Project';
 
 import hashnode from '../assets/hashnode-icon-svgrepo-com.svg';
 import linkedin from '../assets/linkedin-svgrepo-com.svg';
@@ -16,10 +17,8 @@ import tailwind from '../assets/tailwind.png';
 import postman from '../assets/postman.png';
 import figma from '../assets/figma.png';
 import github2 from '../assets/github.png';
-import Project from '../components/Project';
 
 const Home = () => {
-	
 	return (
 		<>
 			<section className='flex items-center justify-center flex-col-reverse lg:flex-row  md:space-x-12'>
@@ -227,34 +226,28 @@ const Home = () => {
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
-							github=''
 							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 						<Project
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
-							github='github'
 							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 						<Project
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
-							github='github'
+							github='github.com'
 							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
 						<Project
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
-							github='github'
 							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-							longDesc='The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.'
 						/>
+						
 					</div>
 					<svg
 						className='rotate-[360deg]  relative bottom-[6.2rem]'
@@ -292,7 +285,7 @@ const Home = () => {
 								id='name'
 								placeholder='Name'
 								className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
-								/>
+							/>
 							<input
 								autoComplete='false'
 								type='text'
