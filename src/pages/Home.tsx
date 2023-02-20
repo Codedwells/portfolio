@@ -1,7 +1,10 @@
-import heroImage from '../assets/hero.jpeg';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import Typed from '../components/Typed';
 import Project from '../components/Project';
 
+import heroImage from '../assets/hero.jpeg';
 import hashnode from '../assets/hashnode-icon-svgrepo-com.svg';
 import linkedin from '../assets/linkedin-svgrepo-com.svg';
 import github from '../assets/logo-github-svgrepo-com.svg';
@@ -19,6 +22,30 @@ import figma from '../assets/figma.png';
 import github2 from '../assets/github.png';
 
 const Home = () => {
+	const location = useLocation();
+	const [show, setShow] = useState<boolean>(true);
+
+	const resumeRef = useRef<HTMLDivElement>(null);
+	const contactRef = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		if (location.state?.show) {
+			location.state.show = '';
+		}
+	}, [show]);
+
+	useEffect(() => {
+		if (location?.state?.show.includes('resume')) {
+			setShow(!show);
+			resumeRef.current?.scrollIntoView();
+		}
+
+		if (location?.state?.show.includes('contact')) {
+			setShow(!show);
+			contactRef.current?.scrollIntoView();
+		}
+	}, [location?.state]);
+
 	return (
 		<>
 			<section className='flex items-center justify-center flex-col-reverse lg:flex-row  md:space-x-12'>
@@ -159,7 +186,10 @@ const Home = () => {
 								Redux
 							</a>
 						</div>
-						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
+						<div
+							ref={resumeRef}
+							className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'
+						>
 							<img className='w-[4rem]' src={tailwind} alt='javascript' />
 							<a className='hover:text-blue-600 font-Raleway' href=''>
 								Tailwind
@@ -263,7 +293,10 @@ const Home = () => {
 				</article>
 			</section>
 
-			<section className='flex flex-col lg:flex-row md:justify-center -mt-[4rem] lg:space-x-4 md:p-6'>
+			<section
+				ref={contactRef}
+				className='flex flex-col lg:flex-row md:justify-center -mt-[4rem] lg:space-x-4 md:p-6'
+			>
 				<div className=' flex flex-col items-center lg:w-[40%] p-1'>
 					<p className='font-[700] w-full px-3 text-4xl md:text-center lg:text-left lg:text-5xl text-[#1f2045]'>
 						Contact me

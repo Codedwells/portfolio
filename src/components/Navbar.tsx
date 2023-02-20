@@ -1,5 +1,10 @@
 import { useRef, useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import {
+	Outlet,
+	Link,
+	NavLink,
+	useNavigate,
+} from 'react-router-dom';
 import '../index.css';
 
 import icon from '../assets/icon.svg';
@@ -7,6 +12,7 @@ import email from '../assets/email-svgrepo-com.svg';
 
 const Navbar = () => {
 	const [opened, setOpened] = useState<boolean>(false);
+	const navigate = useNavigate();
 
 	const hamburger = useRef<HTMLButtonElement>(null);
 	const showMenu = (): void => {
@@ -20,6 +26,16 @@ const Navbar = () => {
 			hamburger.current!.setAttribute('data-state', 'closed');
 			hamburger.current!.setAttribute('aria-expanded', 'false');
 		}
+	};
+
+	const showResume = (): void => {
+		showMenu();
+		navigate('/', { replace: true, state: { show: `resume${Date.now()}` } });
+	};
+
+	const showContact = (): void => {
+		showMenu();
+		navigate('/', { replace: true, state: { show: `contact${Date.now()}` } });
 	};
 
 	return (
@@ -64,35 +80,44 @@ const Navbar = () => {
 						opened ? 'flex' : 'hidden'
 					} flex-col border-b border-t z-20 items-center justify-center space-y-4 text-xl top-[70px] left-0 right-0 bottom-[40%] bg-white md:flex md:border-none md:space-y-0 md:text-base md:flex-row md:static md:space-x-8 md:items-center transition-all duration-1000 ease-in-out`}
 				>
-					<li
+					<NavLink
+						to={'/projects'}
 						onClick={showMenu}
 						id='link'
-						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
+						className={`cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all`}
+						style={({ isActive }) => ({
+							color: isActive ? '#3db9a6' : '#363853',
+						})}
 					>
-						<Link to={'/projects'}>Projects</Link>
-					</li>
+						Projects
+					</NavLink>
+
 					<li
-						onClick={showMenu}
+						onClick={showResume}
 						id='link'
 						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
 					>
 						Resume
 					</li>
 					<li
-						onClick={showMenu}
+						onClick={showContact}
 						id='link'
 						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
 					>
 						Contact
 					</li>
 
-					<li
+					<NavLink
+						to={'/blog'}
 						onClick={showMenu}
 						id='link'
-						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
+						className={`cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all`}
+						style={({ isActive }) => ({
+							color: isActive ? '#3db9a6' : '#363853',
+						})}
 					>
-						<Link to={'/blog'}>Blog</Link>
-					</li>
+						Blog
+					</NavLink>
 				</ul>
 			</nav>
 
