@@ -97,7 +97,7 @@ const Navbar = () => {
 
 			<Outlet />
 
-			<footer className=' bg-[#f1f5f9] text-center p-3'>
+			<footer className=' bg-[#f1f5f9] text-center p-1 md:p-3'>
 				<div className='flex flex-col md:flex-row mt-2 items-center justify-center text-center md:space-x-6'>
 					<div className='flex space-x-2'>
 						<img width={'19px'} src={email} alt='email me' />

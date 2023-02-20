@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 type projectProps = {
 	title: string;
@@ -31,7 +30,7 @@ const Projects = ({
 					className=' mt-4 max-w-[700px] font-[500] whitespace-normal'
 					style={{ wordWrap: 'break-word' }}
 				>
-					{shortDesc},<Link to={'./projects'} className="text-slate-700 hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] "> more...</Link>
+					{shortDesc},<Link to={'./projects'} className="text-[#4f99ea]  hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] "> more...</Link>
 				</p>
 
 				<div className='flex items-center mt-4'>
