@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 
 import Project from '../components/Project';
 
-import project1 from '../assets/project1.png';
 import ctrhome from '../assets/projects/boostctr/home.png';
 import ctrlogin from '../assets/projects/boostctr/login.png';
 import ctrsignup from '../assets/projects/boostctr/signup.png';
