@@ -25,6 +25,11 @@ app.use((0, cors_2.default)({
 }));
 app.use((0, body_parser_1.urlencoded)({ extended: true }));
 app.use((0, body_parser_1.json)());
+
+app.use('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send('Example response');
+  });
 /** Static */
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 /** Routes */

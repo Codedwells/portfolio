@@ -122,6 +122,7 @@ const Home = () => {
 					Accept: 'application/json',
 					'Access-Control-Allow-Origin': `https://abeldev.vercel.app`,
 					'Content-Type': 'application/json',
+					mode: 'no-cors'
 				},
 				body: JSON.stringify({
 					email,
