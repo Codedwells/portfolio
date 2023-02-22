@@ -3,29 +3,38 @@ import helmet from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { urlencoded, json } from 'body-parser';
 
 import connectDB from './connectDb';
 import router from './routes/router';
+import path from 'path';
 
 dotenv.config();
 const PORT = process.env.PORT;
 
 /** Middleware */
 const app = express();
+
 app.use(compression());
 app.use(morgan('tiny'));
 app.use(helmet());
+app.use(
+	cors({
+		origin: ['http://localhost:5500', 'http://localhost:5173','192.168.100.143:5173'],
+		credentials: true,
+	})
+);
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
 /** Static */
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 /** Routes */
 app.use('/', router);
 
-connectDB()
+connectDB();
 app.listen(PORT, () => {
 	console.log(`Server listening on PORT ${PORT}`);
 });

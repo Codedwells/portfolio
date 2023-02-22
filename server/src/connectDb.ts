@@ -1,12 +1,19 @@
 import mongoose from 'mongoose';
-const URL = process.env.MONGO_URL ? process.env.MONGO_URL : '';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 mongoose.set('strictQuery', true);
 
 const connectDB = (): void => {
-	mongoose.connect(URL, () => {
-		console.log('Connected to the database!!');
-	});
+	mongoose
+		.connect(process.env.MONGO_URL || '')
+		.then(() => {
+			console.log('Connected to the DB...');
+		})
+		.catch((err) => {
+			console.log('Error:', err.message);
+		});
 };
 
 export default connectDB;

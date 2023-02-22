@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-XQVTDCGG6Q"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-XQVTDCGG6Q');
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="./public/images/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="./css/output.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="/logic/adminDash.js" defer></script>
+		<title>BoostCTR</title>
+	</head>
+	<body class="bg-blue-50">
+		<div class="flex flex-row">
+			<div
+				class="fixed left-0 top-0 bottom-0 flex flex-col bg-white h-screen justify-between w-64"
+			></div>
+
+			<div class="flex flex-auto">
+				<div class="flex flex-col flex-auto">
+					<div class="fixed z-20 right-0 top-0 left-64 pl-4">
+						<div
+							class="ml-1 p-2 flex flex-row justify-between items-center rounded-bl-md bg-white"
+						>
+							<div class="flex flex-col">
+								<h4 class="font-bold text-gray-500 p-1 text-xl">Admin</h4>
+								<p class="text-gray-400 p-1 font-medium" id="navDate">
+									day month year
+								</p>
+							</div>
+							<div
+								id="adminSet"
+								class="flex items-center text-gray-600 justify-center border mr-8 p-2 rounded-full h-14 w-14 text-xs font-medium"
+							>
+								<span
+									class="material-symbols-outlined cursor-pointer text-[#169b79] hover:text-[#21b993] active:text-[#12795f]"
+									id="adminSettings"
+								>
+									admin_panel_settings
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="relative min-h-screen bg-blue-50 pt-24 ml-64 pb-8">
+						<p class="ml-8 font-[700] text-3xl text-slate-800 mt-6">
+							Subject lines
+						</p>
+
+						<div class="flex bg-transparent space-x-4 mx-6 mt-6 rounded-lg">
+							<div class="flex w-[50%] bg-gray-50 rounded-lg shadow-lg">
+								<form
+									method="post"
+									id="subjectForm"
+									class="pt-8 px-6 mb-4 space-y-8"
+								>
+									<div class="flex items-center space-x-4">
+										<p class="w-24 font-Ubuntu font-[700] text-gray-600">
+											SUBJECT
+										</p>
+										<input
+											type="text"
+											name="subject"
+											class="rounded-t-md bg-white text-lg text-gray-500 border-b-2 h-8 p-6 focus:border-[#169b79] focus:outline-none"
+											placeholder="Subject..."
+											required
+										/>
+									</div>
+									<div class="flex items-center space-x-4">
+										<p class="w-24 font-Ubuntu font-[700] text-gray-600">
+											SCORE
+										</p>
+										<input
+											type="text"
+											name="score"
+											class="rounded-t-md bg-white text-lg text-gray-500 border-b-2 h-8 p-6 focus:border-[#169b79] focus:outline-none"
+											placeholder="Score..."
+											min="2"
+											required
+										/>
+									</div>
+									<div class="flex items-center space-x-4">
+										<p class="w-24 font-Ubuntu font-[700] text-gray-600">
+											FORMULA
+										</p>
+										<input
+											type="text"
+											name="formula"
+											class="rounded-t-md bg-white text-lg text-gray-500 border-b-2 h-8 p-6 focus:border-[#169b79] focus:outline-none"
+											placeholder="Formula..."
+											required
+										/>
+									</div>
+									<div class="flex items-center space-x-4">
+										<p class="w-24 font-Ubuntu font-[700] text-gray-600">
+											TYPE
+										</p>
+										<input
+											type="text"
+											name="type"
+											class="rounded-t-md bg-white text-lg text-gray-500 border-b-2 h-8 p-6 focus:border-[#169b79] focus:outline-none"
+											placeholder="Type..."
+											required
+										/>
+									</div>
+
+									<button
+										id="subjectBtn"
+										type="submit"
+										class="flex flex-row space-x-2 justify-center items-center p-2 px-6 text-white text-sm font-semibold rounded bg-[#169b79] hover:bg-[#21b993] active:bg-[#12795f] cursor:pointer md:text-base ml-auto"
+									>
+										Add
+									</button>
+								</form>
+							</div>
+							<div
+								class="flex flex-col w-[60%] bg-transparent px-4 max-h-[416px] overflow-y-scroll"
+							>
+								<table
+									class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+								>
+									<thead
+										class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+									>
+										<tr class="border">
+											<th
+												scope="col"
+												class="px-2 text-start py-3 border-r md:px-4"
+											>
+												Subject Line
+											</th>
+											<th scope="col" class="px-2 text-center py-3 border-r">
+												Score
+											</th>
+											<th
+												scope="col"
+												class="px-2 text-center py-3 border-r md:text-start md:px-4"
+											>
+												Formula
+											</th>
+											<th
+												scope="col"
+												class="px-2 text-center py-3 md:text-start md:px-4"
+											>
+												Type
+											</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody"></tbody>
+								</table>
+							</div>
+						</div>
+
+						<p class="ml-8 font-[700] text-3xl text-slate-800 mt-11">Tips</p>
+
+						<div class="flex space-x-8 bg-transparent p-4 mx-3 rounded-lg">
+							<div
+								class="flex flex-col w-[580px] p-4 bg-white shadow-lg rounded-md"
+							>
+								<div>
+									<p
+										class="font-semibold font-Ubuntu text-gray-600 text-base pt-2"
+									>
+										New Tip :
+									</p>
+								</div>
+								<form id="quoteForm" class="mb-6">
+									<input
+										type="text"
+										name="quote"
+										placeholder="New Tip..."
+										required
+										class="mt-2 w-[70%] border-b-2 font-Raleway border-gray-500 bg-transparent placeholder:text-gray-300 text-gray-400 py-1 font-semibold text-sm focus:outline-none focus:border-[#169b79]"
+									/>
+									<input
+										type="text"
+										name="category"
+										placeholder="Category..."
+										required
+										class="mt-4 w-[70%] border-b-2 font-Raleway border-gray-500 bg-transparent placeholder:text-gray-300 text-gray-400 py-1 font-semibold text-sm focus:outline-none focus:border-[#169b79]"
+									/>
+
+									<div class="flex justify-end">
+										<button
+											type="submit"
+											id="quoteBtn"
+											class="flex flex-row space-x-2 justify-center items-center p-2 text-white text-sm font-semibold rounded bg-[#169b79] hover:bg-[#21b993] active:bg-[#12795f] cursor:pointer md:text-base"
+										>
+											<p class="text-medium font-semibold font-Ubuntu">Add</p>
+										</button>
+									</div>
+								</form>
+								<div
+									id="tipContainer"
+									class="max-h-[400px] overflow-y-scroll"
+								></div>
+							</div>
+							<div class="flex flex-col space-y-4">
+								<button
+									id="dropdownActionButton"
+									data-dropdown-toggle="dropdownAction"
+									class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 active:bg-white font-medium rounded-lg text-sm px-3 py-1.5 shadow-sm"
+									type="button"
+								>
+									Filter
+								</button>
+
+								<div
+									id="dropdownList"
+									class="h-[100%] w-44 md:left-64 md:top-20 lg:top-12 lg:-left-40"
+								>
+									<ul
+										class="py-1 text-sm text-gray-700 bg-white divide-y divide-gray-100 rounded-lg shadow-md"
+									>
+										<form id="filterForm">
+											<li class="flex space-x-2 px-4">
+												<input type="radio" name="selection" id="random" />
+												<label for="random" class="block py-2">Random</label>
+											</li>
+											<li class="flex space-x-2 px-4">
+												<input type="radio" name="selection" id="latest" />
+												<label for="latest" class="block py-2">Latest</label>
+											</li>
+										</form>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<p class="ml-8 font-[700] text-3xl text-slate-800 mt-6">Messages</p>
+
+						<div
+							id="messagesContainer"
+							class="flex flex-wrap gap-3 bg-transparent p-4 mx-3 rounded-lg max-h-[400px] overflow-y-scroll"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -44,18 +44,47 @@ export const addMessage = async (
 	}
 };
 
-
 export const getMessage = async (
 	req: Request,
 	res: Response
 ): Promise<void> => {
 	try {
-		const messages = await Messages.find({}).sort({ created: 1 });
+		const messages = await Messages.find({}).sort({ created: -1 });
 
 		res.status(200).json({
 			status: 'success',
 			data: { message: 'Data has been queried.', result: messages },
 		});
+	} catch (err) {
+		res.status(500).json({
+			status: 'error',
+			data: { message: 'Internal Server Error!!', result: '' },
+		});
+		console.error(err.message);
+	}
+};
+
+export const deleteMessage = async (
+	req: Request,
+	res: Response
+): Promise<void> => {
+	try {
+		const id = req.params.id;
+
+		let deleted = await Messages.findByIdAndDelete({ _id: id });
+
+		if (!deleted) {
+			res.status(400).json({
+				status: 'error',
+				data: { message: 'An error occured please try again!!', result: '' },
+			});
+
+			return;
+		}
+
+		res
+			.status(200)
+			.json({ status: 'success', message: 'Message has been removed!!' });
 	} catch (err) {
 		res.status(500).json({
 			status: 'error',

@@ -6,7 +6,7 @@ type Props = {
 	slug: string;
 };
 
-const Article = ({ articleType, title, description, image ,slug}: Props) => {
+const Article = ({ articleType, title, description, image, slug }: Props) => {
 	return (
 		<article className='max-w-[50rem]'>
 			<img
@@ -25,7 +25,11 @@ const Article = ({ articleType, title, description, image ,slug}: Props) => {
 						: 'md:max-w-[24rem] lg:max-w-none text-[20px] md:text-[30px] lg:text-[36px]'
 				}`}
 			>
-				<a href={`https://developerup.hashnode.dev/${slug}`} target='_blank' rel='noopener noreferrer'>
+				<a
+					href={`https://developerup.hashnode.dev/${slug}`}
+					target='_blank'
+					rel='noopener noreferrer'
+				>
 					{title}
 				</a>
 			</h1>
@@ -36,7 +40,13 @@ const Article = ({ articleType, title, description, image ,slug}: Props) => {
 						: 'md:max-w-[85%] lg:max-w-[70%]'
 				}`}
 			>
-				{description}
+				{description}{' '}
+				<a
+					href={`https://developerup.hashnode.dev/${slug}`}
+					className='text-[#14b7a5] hover:text-[#40d4c3]  active:text-[#14b7a5] font-[700]'
+				>
+					Read more &#8594;
+				</a>
 			</p>
 		</article>
 	);
