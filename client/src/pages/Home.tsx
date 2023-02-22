@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Typed from '../components/Typed';
 import Project from '../components/Project';
@@ -24,6 +26,12 @@ import github2 from '../assets/github.png';
 const Home = () => {
 	const location = useLocation();
 	const [show, setShow] = useState<boolean>(true);
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
+	});
 
 	const resumeRef = useRef<HTMLDivElement>(null);
 	const contactRef = useRef<HTMLElement>(null);
@@ -46,8 +54,98 @@ const Home = () => {
 		}
 	}, [location?.state]);
 
+	const setForm = (
+		e:
+			| React.ChangeEvent<HTMLInputElement>
+			| React.ChangeEvent<HTMLTextAreaElement>
+	) => {
+		let target = e.target;
+
+		if (target.name === 'name') {
+			setFormData({ ...formData, name: target.value });
+		} else if (target.name === 'email') {
+			setFormData({ ...formData, email: target.value });
+		} else if (target.name === 'subject') {
+			setFormData({ ...formData, subject: target.value });
+		} else {
+			setFormData({ ...formData, message: target.value });
+		}
+	};
+
+	const notify = (type: string, message: string) => {
+		if (type === 'success') {
+			toast.success(message, {
+				position: 'top-right',
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'light',
+			});
+			return;
+		}
+		toast.error(message, {
+			position: 'top-right',
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'light',
+		});
+	};
+
+	const sendMessage = async (
+		e: React.MouseEvent<HTMLButtonElement>
+	): Promise<void> => {
+		e.preventDefault();
+
+		var emailRegex = /^((?!\.)[\w_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm;
+
+		const { email, message, name, subject } = formData;
+
+		if (!email || !emailRegex.test(email)) {
+			notify('error', 'Email cannot be empty and has to be valid!!');
+		} else if (!name) {
+			notify('error', 'Name cannot be empty!!');
+		} else if (!subject) {
+			notify('error', 'Subject cannot be empty!!');
+		} else if (!message) {
+			notify('error', 'Message cannot be empty!!');
+		} else {
+			const options: RequestInit = {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Access-Control-Allow-Origin': `http://localhost:5000`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email,
+					message,
+					name,
+					subject,
+				}),
+			};
+
+			fetch('http://localhost:5000/api/v1/messages', options);
+
+			setFormData({ name: '', email: '', subject: '', message: '' });
+		}
+
+		notify(
+			'success',
+			'I have received your message. I will get back to you as soon as I see it.'
+		);
+	};
+
 	return (
 		<>
+			<ToastContainer />
+
 			<section className='flex items-center justify-center flex-col-reverse lg:flex-row  md:space-x-12'>
 				<div className='flex flex-col text-[#1f2045] mt-8 md:px-12 md:mt-20 lg:mt-28 lg:pl-0 md:text-center lg:text-left'>
 					<p className='font-[700] max-w-[400px] px-4 md:px-0 text-left text-[3rem] md:text-center lg:text-left  md:text-[4rem] md:max-w-[800px] lg:max-w-[500px] whitespace-normal leading-[4rem]'>
@@ -313,39 +411,47 @@ const Home = () => {
 						<div className='flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:space-x-4 '>
 							<input
 								type='text'
+								onChange={setForm}
 								name='name'
-								id='name'
 								placeholder='Name'
+								value={formData.name}
+								required
 								className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
 							/>
 							<input
+								onChange={setForm}
 								autoComplete='false'
 								type='text'
 								name='email'
-								id='email'
 								placeholder='Email'
+								value={formData.email}
+								required
 								className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
 							/>
 						</div>
 						<input
+							onChange={setForm}
 							type='text'
-							name='name'
-							id='name'
+							name='subject'
+							value={formData.subject}
 							placeholder='Subject'
+							required
 							className='h-[3rem]  p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent focus:border-l-blue-500 '
 						/>
 						<textarea
+							onChange={setForm}
 							name='message'
-							id='message'
 							cols={30}
 							rows={10}
+							value={formData.message}
 							placeholder='Your message'
+							required
 							className='p-2 bg-slate-100 rounded rounded-l-none focus:outline-none border-l-[3px] border-transparent  focus:border-l-blue-500 '
 						/>
 
 						<div className='mx-auto '>
 							<button
-								type='submit'
+								onClick={sendMessage}
 								className='text-white font-Raleway bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-[600] rounded-lg text-lg  px-5 py-2.5 text-center mr-2 mb-2 w-[16rem]'
 							>
 								Submit

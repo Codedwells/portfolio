@@ -7,7 +7,7 @@ export const addMessage = async (
 	res: Response
 ): Promise<void> => {
 	try {
-		const { name, email, subject, message } = req.body();
+		const { name, email, subject, message } = req.body;
 
 		if (!name || !email || !subject || !message) {
 			res.status(400).json({
