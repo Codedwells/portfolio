@@ -9,13 +9,13 @@ const Blog = () => {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',
-			'Access-Control-Allow-Origin': `http://localhost:5000`,
+			'Access-Control-Allow-Origin': `https://abeldev.vercel.app`,
 			'Content-Type': 'application/json',
 		},
 	};
 
 	const [data, isLoading] = useFetch(
-		'http://localhost:5000/api/v1/article/all',
+		'https://abeldev.vercel.app/api/v1/article/all',
 		options
 	);
 

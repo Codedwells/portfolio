@@ -120,7 +120,7 @@ const Home = () => {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
-					'Access-Control-Allow-Origin': `http://localhost:5000`,
+					'Access-Control-Allow-Origin': `https://abeldev.vercel.app`,
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
@@ -131,7 +131,7 @@ const Home = () => {
 				}),
 			};
 
-			fetch('http://localhost:5000/api/v1/messages', options);
+			fetch('https://abeldev.vercel.app/api/v1/messages', options);
 
 			setFormData({ name: '', email: '', subject: '', message: '' });
 		}

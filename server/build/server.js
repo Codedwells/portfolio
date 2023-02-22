@@ -21,8 +21,7 @@ app.use((0, compression_1.default)());
 app.use((0, morgan_1.default)('tiny'));
 app.use((0, cors_1.default)());
 app.use((0, cors_2.default)({
-    origin: ['http://localhost:5500', 'http://localhost:5173', 'http://localhost:5000'],
-    credentials: true,
+    origin: ['https://abeldev.netlify.app'],
 }));
 app.use((0, body_parser_1.urlencoded)({ extended: true }));
 app.use((0, body_parser_1.json)());
