@@ -21,7 +21,7 @@ app.use((0, compression_1.default)());
 app.use((0, morgan_1.default)('tiny'));
 app.use((0, cors_1.default)());
 app.use((0, cors_2.default)({
-    origin: ['https://abeldev.netlify.app'],
+    origin: ['https://abeldev.netlify.app','https://abeldev.site'],
 }));
 app.use((0, body_parser_1.urlencoded)({ extended: true }));
 app.use((0, body_parser_1.json)());
