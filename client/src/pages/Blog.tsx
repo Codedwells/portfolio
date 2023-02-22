@@ -19,7 +19,6 @@ const Blog = () => {
 		options
 	);
 
-	console.log(data);
 	return (
 		<section className='md:mt-[2rem] bg-slate-50 pb-[2rem]'>
 			<nav className='text-sm md:text-base font-Raleway pl-4 md:pl-[3.5rem] lg:pl-[14rem] font-[500] text-[#1f2045] bg-white'>

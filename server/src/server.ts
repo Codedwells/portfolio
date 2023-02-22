@@ -21,7 +21,7 @@ app.use(morgan('tiny'));
 app.use(helmet());
 app.use(
 	cors({
-		origin: ['http://localhost:5500', 'http://localhost:5173','192.168.100.143:5173'],
+		origin: ['http://localhost:5500', 'http://localhost:5173','http://localhost:5000'],
 		credentials: true,
 	})
 );

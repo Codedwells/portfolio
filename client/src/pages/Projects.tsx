@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import Project from '../components/Project';
 
 import project1 from '../assets/project1.png';
+import ctrhome from '../assets/projects/boostctr/home.png';
+import ctrlogin from '../assets/projects/boostctr/login.png';
+import ctrsignup from '../assets/projects/boostctr/signup.png';
+import ctrcontact from '../assets/projects/boostctr/contact.png';
 
 const Projects = () => {
 	return (
@@ -36,44 +40,14 @@ const Projects = () => {
 						title='BoostCTR'
 						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 						liveLink='http://boostctr.io'
-						images={[project1, project1, project1, project1]}
+						images={[ctrhome, ctrsignup, ctrlogin, ctrcontact]}
 						longDesc={[
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
+							'This is a project I completed for H-educate is a database application built using TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx. This application is designed to provide users with a database of email subject lines that they can use in their marketing campaigns. The application uses JWT cookies for authentication, which ensures that only authorized users can access the database.',
+							'The application is built using a modular architecture, which makes it easy to scale and maintain. The backend is built using Node.js and Express, with MongoDB as the database. Nginx is used as the web server, which helps to improve performance and security',
+							'Overall, this project demonstrates my skills in building robust and scalable applications using the latest technologies. It showcases my expertise in TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx, as well as my ability to implement secure authentication using JWT cookies.',
 						]}
 					/>
-					<Project
-						title='BoostCTR'
-						github='github.com'
-						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-						liveLink='http://boostctr.io'
-						images={[project1, project1, project1, project1]}
-						longDesc={[
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-						]}
-					/>
-					<Project
-						title='BoostCTR'
-						github='github.com'
-						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-						liveLink='http://boostctr.io'
-						images={[project1, project1, project1, project1]}
-						longDesc={[
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-						]}
-					/>
-					<Project
-						title='BoostCTR'
-						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-						liveLink='http://boostctr.io'
-						images={[project1, project1, project1, project1]}
-						longDesc={[
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-							'The project is made with Typescript and Tailwind for the frontend. The backend is built with NodeJs and Express. MongoDB is used to store all data for the site. Mongoose is the ORM used.',
-						]}
-					/>
+					
 				</div>
 				<svg
 					className='rotate-[360deg]  relative bottom-[6.2rem]'

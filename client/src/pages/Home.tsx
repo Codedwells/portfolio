@@ -159,7 +159,7 @@ const Home = () => {
 					<div className='flex flex-wrap gap-4 mt-4 pl-4 lg:pr-0 md:pl-0 md:justify-center lg:justify-start'>
 						<a
 							className='border-2 p-2 md:p-3 rounded-full hover:border-slate-300 active:border-slate-500'
-							href=''
+							href='https://github.com/Codedwells'
 						>
 							<img
 								className='w-8 hover:opacity-80 md:w-10'
@@ -169,7 +169,7 @@ const Home = () => {
 						</a>
 						<a
 							className='border-2 p-2 md:p-3 rounded-full hover:border-slate-300 active:border-slate-500'
-							href=''
+							href='https://twitter.com/misiocha_abel'
 						>
 							<img
 								className='w-8 hover:opacity-80 md:w-10 '
@@ -179,7 +179,7 @@ const Home = () => {
 						</a>
 						<a
 							className='border-2 p-2 md:p-[8px] rounded-full hover:border-slate-300 active:border-slate-500'
-							href=''
+							href='https://linkedin.com/in/devabel'
 						>
 							<img
 								className='w-8 hover:opacity-80 md:w-12'
@@ -189,7 +189,7 @@ const Home = () => {
 						</a>
 						<a
 							className='border-2 p-2 md:p-3 rounded-full hover:border-slate-300 active:border-slate-500'
-							href=''
+							href='https://developerup.hashnode.dev/'
 						>
 							<img
 								className='w-8 hover:opacity-80 md:w-10'
@@ -244,78 +244,54 @@ const Home = () => {
 					<div className='grid gap-4 grid-cols-3 place-items-center  md:grid-cols-4  p-4 mt-8'>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={js} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								JavaScript
-							</a>
+							JavaScript
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={ts} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								TypeScript
-							</a>
+							TypeScript
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={mongo} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								MongoDB
-							</a>
+							MongoDB
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={express} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								expressJS
-							</a>
+							expressJS
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={react} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								ReactJS
-							</a>
+							ReactJS
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={node} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								NodeJS
-							</a>
+							NodeJS
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={redux} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								Redux
-							</a>
+							Redux
 						</div>
 						<div
 							ref={resumeRef}
 							className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'
 						>
 							<img className='w-[4rem]' src={tailwind} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								Tailwind
-							</a>
+							Tailwind
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={postman} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								Postman
-							</a>
+							Postman
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={figma} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								Figma
-							</a>
+							Figma
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={github2} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								Github
-							</a>
+							Github
 						</div>
 						<div className='flex flex-col p-1  items-center border-2 rounded-md w-[100px]'>
 							<img className='w-[4rem]' src={js} alt='javascript' />
-							<a className='hover:text-blue-600 font-Raleway' href=''>
-								JavaScript
-							</a>
+							JavaScript
 						</div>
 					</div>
 					<p className='mt-[3rem] font-Raleway font-[500] text-2xl text-center'>
@@ -354,26 +330,7 @@ const Home = () => {
 							title='BoostCTR'
 							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
 							liveLink='http://boostctr.io'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-						/>
-						<Project
-							title='BoostCTR'
-							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-							liveLink='http://boostctr.io'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-						/>
-						<Project
-							title='BoostCTR'
-							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-							liveLink='http://boostctr.io'
-							github='github.com'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
-						/>
-						<Project
-							title='BoostCTR'
-							techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-							liveLink='http://boostctr.io'
-							shortDesc='A freelance project I did for H-educate. A database for email subject lines that have been proven effective for customer mailing'
+							shortDesc='This is a project I completed for H-educate is a database application built using TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx. This application is designed to provide users with a database of email subject lines that they can use in their marketing campaigns. The application uses JWT cookies for authentication, which ensures that only authorized users can access the database.'
 						/>
 					</div>
 					<svg
