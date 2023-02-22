@@ -44,7 +44,7 @@ const Projects = () => {
 						longDesc={[
 							'This is a project I completed for H-educate is a database application built using TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx. This application is designed to provide users with a database of email subject lines that they can use in their marketing campaigns. The application uses JWT cookies for authentication, which ensures that only authorized users can access the database.',
 							'The application is built using a modular architecture, which makes it easy to scale and maintain. The backend is built using Node.js and Express, with MongoDB as the database. Nginx is used as the web server, which helps to improve performance and security',
-							'Overall, this project demonstrates my skills in building robust and scalable applications using the latest technologies. It showcases my expertise in TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx, as well as my ability to implement secure authentication using JWT cookies.',
+							'Overall, this project demonstrates my skills in building robust and scalable applications using the latest technologies. It showcases my skills in TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx, as well as my ability to implement secure authentication using JWT cookies.',
 						]}
 					/>
 					
