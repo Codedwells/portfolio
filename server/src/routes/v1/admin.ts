@@ -3,6 +3,6 @@ import { newAdmin } from '../../controller/adminController';
 
 const router = Router();
 
-router.post('/newAdmin', newAdmin);
+//router.post('/newAdmin', newAdmin);
 
 export default router;
