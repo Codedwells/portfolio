@@ -9,7 +9,7 @@ dotenv_1.default.config();
 mongoose_1.default.set('strictQuery', true);
 const connectDB = () => {
     mongoose_1.default
-        .connect(process.env.MONGO_URL || '')
+        .connect(process.env.MONGO_URL || 'mongodb+srv://nairobiwizz:BmZ7WQhayJFndQd9@portfolio.1fhqqps.mongodb.net/?retryWrites=true&w=majority')
         .then(() => {
         console.log('Connected to the DB...');
     })
