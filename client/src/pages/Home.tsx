@@ -72,7 +72,7 @@ const Home = () => {
 		}
 	};
 
-	const notify = (type: string, message: string) => {
+	const notify = (type: string, message: string):void => {
 		if (type === 'success') {
 			toast.success(message, {
 				position: 'top-right',
@@ -109,12 +109,16 @@ const Home = () => {
 
 		if (!email || !emailRegex.test(email)) {
 			notify('error', 'Email cannot be empty and has to be valid!!');
+			return;
 		} else if (!name) {
 			notify('error', 'Name cannot be empty!!');
+			return;
 		} else if (!subject) {
 			notify('error', 'Subject cannot be empty!!');
+			return;
 		} else if (!message) {
 			notify('error', 'Message cannot be empty!!');
+			return;
 		} else {
 			const options: RequestInit = {
 				method: 'POST',
