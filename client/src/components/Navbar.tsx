@@ -46,7 +46,7 @@ const Navbar = () => {
 						<img className='w-8 md:12 cursor-pointer' src={icon} alt='logo' />
 					</Link>
 					<Link to={'/'}>
-						<p className='text-[#363853] text-3xl font-bold cursor-pointer'>
+						<p className='text-[#e2e8f0] text-3xl font-bold cursor-pointer'>
 							Abel
 						</p>
 					</Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
 					aria-expanded='false'
 				>
 					<svg
-						stroke='#363853'
+						stroke='#0a8879'
 						fill='none'
 						className='hamburger'
 						viewBox='-10 -10 120 120'
@@ -76,17 +76,17 @@ const Navbar = () => {
 					</svg>
 				</button>
 				<ul
-					className={`absolute ${
+					className={`absolute bg-[#0f172a] ${
 						opened ? 'flex' : 'hidden'
-					} flex-col border-b border-t z-20 items-center justify-center space-y-4 text-xl top-[70px] left-0 right-0 bottom-[40%] bg-white md:flex md:border-none md:space-y-0 md:text-base md:flex-row md:static md:space-x-8 md:items-center transition-all duration-1000 ease-in-out`}
+					} flex-col border-[#1a3d5b] border-b border-t z-20 items-center justify-center space-y-4 text-xl top-[70px] left-0 right-0 bottom-[40%] md:flex md:border-none md:space-y-0 md:text-base md:flex-row md:static md:space-x-8 md:items-center transition-all duration-1000 ease-in-out`}
 				>
 					<NavLink
 						to={'/projects'}
 						onClick={showMenu}
 						id='link'
-						className={`cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all`}
+						className={`cursor-pointer font-[500] active:text-[#8b8ead] transition-all`}
 						style={({ isActive }) => ({
-							color: isActive ? '#3db9a6' : '#363853',
+							color: isActive ? '#3db9a6' : '#e2e8f0',
 						})}
 					>
 						Projects
@@ -95,14 +95,14 @@ const Navbar = () => {
 					<li
 						onClick={showResume}
 						id='link'
-						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
+						className='cursor-pointer text-[#e2e8f0] font-[500] active:text-[#8b8ead] transition-all'
 					>
 						Resume
 					</li>
 					<li
 						onClick={showContact}
 						id='link'
-						className='cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all'
+						className='cursor-pointer text-[#e2e8f0] font-[500] active:text-[#8b8ead] transition-all'
 					>
 						Contact
 					</li>
@@ -111,9 +111,9 @@ const Navbar = () => {
 						to={'/blog'}
 						onClick={showMenu}
 						id='link'
-						className={`cursor-pointer text-[#363853] font-[500] active:text-[#8b8ead] transition-all`}
+						className={`cursor-pointer font-[500] active:text-[#8b8ead] transition-all`}
 						style={({ isActive }) => ({
-							color: isActive ? '#3db9a6' : '#363853',
+							color: isActive ? '#3db9a6' : '#e2e8f0',
 						})}
 					>
 						Blog
@@ -123,13 +123,13 @@ const Navbar = () => {
 
 			<Outlet />
 
-			<footer className='text-sm font-[700] font-Raleway text-[#1f2045] bg-[#f1f5f9] text-center p-1 md:p-3'>
+			<footer className='text-sm font-[700] font-Raleway text-[#e2e8f0] bg-[#1e293b] text-center p-1 md:p-3'>
 				<div className='flex flex-col md:flex-row mt-2 items-center justify-center text-center md:space-x-6'>
 					<div className='flex space-x-2'>
 						<img width={'19px'} src={email} alt='email me' />
 						<a
 							href='mailto:abel@abeldev.site'
-							className=' hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] '
+							className=' hover:text-[#1e9688] '
 						>
 							abel@abeldev.site
 						</a>

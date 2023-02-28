@@ -27,9 +27,9 @@ const Project = ({
 }: projectProps) => {
 	return (
 		<section
-			className={`border shadow-md ${
+			className={`border border-[#0f172a] shadow-md ${
 				longDesc ? 'rounded-b-md' : 'rounded-md'
-			} md:mx-[6rem] lg:mx-[24rem] bg-slate-50 ${
+			} md:mx-[6rem] lg:mx-[24rem] bg-[#0f172a] ${
 				longDesc ? 'mb-[3rem] md:mb-[4rem] lg:mb-[8rem]' : 'mb-[2rem]'
 			}`}
 		>
@@ -58,29 +58,33 @@ const Project = ({
 			</Swiper>
 
 			<article className='p-6'>
-				<h1 className='font-[500] text-gray-700'>{title}</h1>
+				<h1 className='font-[600] text-xl text-[#e2e8f0]'>{title}</h1>
 				<h3
-					className='text-[#4f99ea] font-[600] whitespace-normal'
+					className='text-[#14b7a5] mt-3 font-[600] whitespace-normal'
 					style={{ wordWrap: 'break-word' }}
 				>
 					{techStack}
 				</h3>
 				<div
-					className=' mt-4 max-w-[700px] font-[500] whitespace-normal'
+					className=' mt-2 max-w-[700px] font-[500] whitespace-normal'
 					style={{ wordWrap: 'break-word' }}
 				>
 					{shortDesc ? (
-						<p>{shortDesc + ','}</p>
+						<p className='text-[#e2e8f0]'>{shortDesc + ','}</p>
 					) : (
 						longDesc?.map((curr) => {
-							return <p className='mt-2' key={uuidv4()}>{curr}</p>;
+							return (
+								<p className='mt-2 text-[#e2e8f0]' key={uuidv4()}>
+									{curr}
+								</p>
+							);
 						})
 					)}
 
 					{shortDesc && (
 						<Link
 							to={'./projects'}
-							className='text-[#4f99ea] hover:text-transparent bg-clip-text bg-gradient-to-r from-[#4158d0] via-[#c850c0] to-[#ffcc70] '
+							className='text-[#14b7a5] hover:text-transparent bg-clip-text bg-gradient-to-r from-[#c850c0] to-[#ffcc70] '
 						>
 							{' '}
 							more...
@@ -90,7 +94,7 @@ const Project = ({
 
 				<div className='flex items-center mt-4'>
 					{liveLink && (
-						<a href={liveLink} target={'_blank'}>
+						<a href={liveLink} target={'_blank'} className="text-[#e2e8f0] hover:text-emerald-600 transition-all">
 							<svg
 								stroke='currentColor'
 								fill='currentColor'
@@ -108,26 +112,28 @@ const Project = ({
 						</a>
 					)}
 					{github && (
-						<div className='flex -space-x-1 items-center'>
-							<a href={github} target={'_blank'}>
-								<svg
-									className=' w-8'
-									stroke='currentColor'
-									fill='currentColor'
-									strokeWidth='0'
-									viewBox='0 0 24 24'
-									height='1em'
-									width='1em'
-									xmlns='http://www.w3.org/2000/svg'
-								>
-									<g>
-										<path fill='none' d='M0 0h24v24H0z'></path>
-										<path d='M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z'></path>
-									</g>
-								</svg>
-							</a>
+						<a
+							href={github}
+							target={'_blank'}
+							className='flex -space-x-1 items-center text-[#e2e8f0] hover:text-emerald-600 transition-all'
+						>
+							<svg
+								className=' w-8'
+								stroke='currentColor'
+								fill='currentColor'
+								strokeWidth='0'
+								viewBox='0 0 24 24'
+								height='1em'
+								width='1em'
+								xmlns='http://www.w3.org/2000/svg'
+							>
+								<g>
+									<path fill='none' d='M0 0h24v24H0z'></path>
+									<path d='M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z'></path>
+								</g>
+							</svg>
 							<span className='font-[500]'>code</span>
-						</div>
+						</a>
 					)}
 				</div>
 			</article>

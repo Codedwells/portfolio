@@ -19,7 +19,7 @@ const Article = ({ articleType, title, description, image, slug }: Props) => {
 				}`}
 			/>
 			<h1
-				className={`text-[#2c3032] hover:text-[#3c4549] transition-colors duration-300 font-[700] p-1 lg:px-4 ${
+				className={`text-[#e2e8f0] hover:text-[#8796ab] transition-colors duration-300 font-[700] p-1 lg:px-4 ${
 					articleType === 'norm'
 						? 'lg:max-w-[31.2rem] text-[20px]'
 						: 'md:max-w-[24rem] lg:max-w-none text-[20px] md:text-[30px] lg:text-[36px]'
@@ -34,10 +34,10 @@ const Article = ({ articleType, title, description, image, slug }: Props) => {
 				</a>
 			</h1>
 			<p
-				className={`font-Raleway font-[500] p-1 text-[#2c3032] text-sm md:text-base lg:px-4 ${
+				className={`font-Raleway font-[500] p-1 text-[#8796ab] text-sm md:text-base lg:px-4 ${
 					articleType === 'norm'
 						? 'max-w-[28rem]'
-						: 'md:max-w-[85%] lg:max-w-[70%]'
+						: 'md:max-w-[76%] lg:max-w-[70%]'
 				}`}
 			>
 				{description}{' '}

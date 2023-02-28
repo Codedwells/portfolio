@@ -21,7 +21,7 @@ app.use(morgan('tiny'));
 app.use(helmet());
 app.use(
 	cors({
-		origin: ['https://abeldev.netlify.app','https://abeldev.site'],
+		origin: ['https://abeldev.netlify.app','https://abeldev.site','http://localhost:5173'],
 		credentials: true,
 	})
 );
