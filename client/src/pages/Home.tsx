@@ -22,6 +22,7 @@ import postman from '../assets/postman.png';
 import figma from '../assets/figma.png';
 import nextjs from '../assets/nextjs-icon.svg';
 import expressjs from '../assets/expressjs.svg'
+import resume from '../assets/resume/Abel_Misiocha.pdf'
 
 const Home = () => {
 	const location = useLocation();
@@ -307,7 +308,7 @@ const Home = () => {
 						Download resume{' '}
 						<a
 							className='cursor-pointer text-[#14b7a5] hover:underline active:text-[#4f99ea]'
-							href=''
+							href={resume}
 						>
 							here.
 						</a>
