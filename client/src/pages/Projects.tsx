@@ -53,7 +53,7 @@ const Projects = () => {
 					<Project
 						title='Borgen'
 						techStack={`TypeScript+NodeJs+Express+Chalk`}
-						liveLink='https://codedwells.github.io/Borgen'
+						liveLink='https://www.npmjs.com/package/borgen'
 						github='https://github.com/Codedwells/Borgen'
 						images={[borgenNpm,borgenWeb]}
 						longDesc={[

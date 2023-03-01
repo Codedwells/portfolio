@@ -345,7 +345,7 @@ const Home = () => {
 						<Project
 							title='Borgen'
 							techStack={`TypeScript+NodeJs+Express+Chalk`}
-							liveLink='https://codedwells.github.io/Borgen'
+							liveLink='https://www.npmjs.com/package/borgen'
 							github='https://github.com/Codedwells/Borgen'
 							shortDesc='Borgen is a powerful HTTP logger middleware for Node.js, designed to help developers track HTTP requests and responses in their applications. With Borgen, you can easily customize the color scheme of your logs, allowing you to quickly identify different types of requests and responses. Built using TypeScript, Borgen is highly flexible and can be easily integrated into your Express applications. With Borgen your logs will be colorful and easy to read'
 						/>
