@@ -15,7 +15,7 @@ const Blog = () => {
 	};
 
 	const [data, isLoading] = useFetch(
-		'http://localhost:5000/api/v1/article/all',
+		'http://abeldev.vercel.app/api/v1/article/all',
 		options
 	);
 
