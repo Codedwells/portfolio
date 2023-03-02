@@ -1,4 +1,4 @@
-var BASE_URL = 'http://localhost:5000';
+var BASE_URL = 'https://abeldev.vercel.app';
 
 const showToast = (icon, message) => {
 	const Toast = Swal.mixin({
