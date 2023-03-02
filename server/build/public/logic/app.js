@@ -134,7 +134,6 @@ const updateMessage = async () => {
 
 		messageContainer.appendChild(container);
 	});
-	console.log(data);
 };
 updateMessage();
 
