@@ -31,6 +31,13 @@ const Blog = () => {
 				/<p className='inline'>Articles</p>
 			</nav>
 
+			{isLoading && <div className='absolute flex items-center justify-center bg-[#0f172a] top-[4rem] bottom-[4rem] left-0 right-0 text-white'>
+				<div className='loader3'>
+					<span></span>
+					<span></span>
+				</div>
+			</div>}
+
 			<div className='flex flex-col md:flex-row px-8 md:px-[3rem] lg:px-[8rem] py-2 justify-between mt-[3rem] md:mb-[2rem] lg:mb-[4rem] '>
 				{data && (
 					<div>
