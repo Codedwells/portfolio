@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import Swal from 'sweetalert2';
 
 import Typed from '../components/Typed';
 import Project from '../components/Project';
@@ -21,8 +21,8 @@ import tailwind from '../assets/tailwind.png';
 import postman from '../assets/postman.png';
 import figma from '../assets/figma.png';
 import nextjs from '../assets/nextjs-icon.svg';
-import expressjs from '../assets/expressjs.svg'
-import resume from '../assets/resume/Abel_Misiocha.pdf'
+import expressjs from '../assets/expressjs.svg';
+import resume from '../assets/resume/Abel_Misiocha.pdf';
 
 const Home = () => {
 	const location = useLocation();
@@ -73,29 +73,29 @@ const Home = () => {
 		}
 	};
 
+	const Toast = Swal.mixin({
+		toast: true,
+		position: 'top-end',
+		showConfirmButton: false,
+		timer: 3000,
+		timerProgressBar: true,
+		didOpen: (toast) => {
+			toast.addEventListener('mouseenter', Swal.stopTimer);
+			toast.addEventListener('mouseleave', Swal.resumeTimer);
+		},
+	});
+
 	const notify = (type: string, message: string): void => {
 		if (type === 'success') {
-			toast.success(message, {
-				position: 'top-right',
-				autoClose: 5000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: 'light',
+			Toast.fire({
+				icon: 'success',
+				title: message,
 			});
 			return;
 		}
-		toast.error(message, {
-			position: 'top-right',
-			autoClose: 5000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-			theme: 'light',
+		Toast.fire({
+			icon: 'error',
+			title: message,
 		});
 	};
 
@@ -149,8 +149,6 @@ const Home = () => {
 
 	return (
 		<>
-			<ToastContainer />
-
 			<section className='flex items-center justify-center flex-col-reverse lg:flex-row  md:space-x-12'>
 				<div className='flex flex-col text-[#e2e8f0] mt-8 md:px-12 md:mt-20 lg:mt-28 lg:pl-0 md:text-center lg:text-left'>
 					<p className='font-[700] max-w-[400px] px-4 md:px-0 text-left text-[3rem] md:text-center lg:text-left  md:text-[4rem] md:max-w-[800px] lg:max-w-[500px] whitespace-normal leading-[4rem]'>
@@ -265,7 +263,11 @@ const Home = () => {
 							MongoDB
 						</div>
 						<div className='flex flex-col p-1  items-center border-[#1e293b] border-2 rounded-md w-[100px]'>
-							<img className='w-[4rem] text-white' src={expressjs} alt='javascript' />
+							<img
+								className='w-[4rem] text-white'
+								src={expressjs}
+								alt='javascript'
+							/>
 							expressJS
 						</div>
 						<div className='flex flex-col p-1  items-center border-[#1e293b] border-2 rounded-md w-[100px]'>
