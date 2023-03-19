@@ -7,8 +7,14 @@ import ctrlogin from '../assets/projects/boostctr/login.png';
 import ctrsignup from '../assets/projects/boostctr/signup.png';
 import ctrcontact from '../assets/projects/boostctr/contact.png';
 
-import borgenWeb from '../assets/projects/borgen/website.png'
-import borgenNpm from '../assets/projects/borgen/npm.png'
+import borgenWeb from '../assets/projects/borgen/website.png';
+import borgenNpm from '../assets/projects/borgen/npm.png';
+
+import dashboard from '../assets/projects/dashboard/dashboard.png';
+import apps from '../assets/projects/dashboard/apps.png';
+import users from '../assets/projects/dashboard/users.png';
+import email from '../assets/projects/dashboard/email.png';
+import apis from '../assets/projects/dashboard/apis.png';
 
 const Projects = () => {
 	return (
@@ -39,14 +45,14 @@ const Projects = () => {
 
 				<div className='relative py-28 w-screen projects px-4'>
 					<Project
-						title='BoostCTR'
-						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
-						liveLink='http://boostctr.io'
-						images={[ctrhome, ctrsignup, ctrlogin, ctrcontact]}
+						title='Dashboard'
+						techStack={`React+TypeScript+ChartJs+TailwindCSS+HeroIcons`}
+						liveLink='https://react-admindash.vercel.app'
+						github='https://github.com/Codedwells/Admin-Dashboard-React-Ts'
+						images={[apps, dashboard, users, email, apis]}
 						longDesc={[
-							'This is a project I completed for H-educate is a database application built using TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx. This application is designed to provide users with a database of email subject lines that they can use in their marketing campaigns. The application uses JWT cookies for authentication, which ensures that only authorized users can access the database.',
-							'The application is built using a modular architecture, which makes it easy to scale and maintain. The backend is built using Node.js and Express, with MongoDB as the database. Nginx is used as the web server, which helps to improve performance and security',
-							'Overall, this project demonstrates my skills in building robust and scalable applications using the latest technologies. It showcases my skills in TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx, as well as my ability to implement secure authentication using JWT cookies.',
+							'The dashboard provides a clean and intuitive user interface that enables administrators to view critical information at a glance and quickly take necessary actions. With all these tools and technologies combined, the admin dashboard is a powerful tool for any organization looking to streamline their operations and enhance their decision-making capabilities.',
+							'The dashboard is designed to receive and display data in real-time, allowing administrators to quickly respond to changes and make informed decisions. This is particularly useful for organizations that need to monitor and manage their systems or operations.',
 						]}
 					/>
 
@@ -55,12 +61,24 @@ const Projects = () => {
 						techStack={`TypeScript+NodeJs+Express+Chalk`}
 						liveLink='https://www.npmjs.com/package/borgen'
 						github='https://github.com/Codedwells/Borgen'
-						images={[borgenNpm,borgenWeb]}
+						images={[borgenNpm, borgenWeb]}
 						longDesc={[
 							"Borgen is a customizable HTTP logger middleware that allows developers to easily track HTTP requests and responses in their Node.js applications. With its customizable color scheme, Borgen makes it easy to identify different types of requests and responses, providing invaluable insight into how your application is performing. Whether you're building a small web app or a large-scale enterprise application, Borgen can help you stay on top of your HTTP traffic.",
-							"One of the key features of Borgen is its flexibility. Built using TypeScript, Borgen is highly customizable, allowing you to tailor it to your specific needs. With its simple, intuitive API, you can easily configure Borgen to log exactly the information you need, without any unnecessary clutter.",
-							"Another great feature of Borgen is its integration with the popular Express framework. With Borgen, you can quickly and easily add HTTP logging to your Express applications, making it easy to keep track of requests and responses. And with its dependency on the widely-used Chalk library, your logs will be colorful and easy to read, helping you to quickly identify issues and troubleshoot problems.",
-							"Whether you're a seasoned developer or just starting out, Borgen is a powerful tool that can help you take your Node.js applications to the next level. So why not give it a try today and see for yourself what a difference it can make?"
+							'One of the key features of Borgen is its flexibility. Built using TypeScript, Borgen is highly customizable, allowing you to tailor it to your specific needs. With its simple, intuitive API, you can easily configure Borgen to log exactly the information you need, without any unnecessary clutter.',
+							'Another great feature of Borgen is its integration with the popular Express framework. With Borgen, you can quickly and easily add HTTP logging to your Express applications, making it easy to keep track of requests and responses. And with its dependency on the widely-used Chalk library, your logs will be colorful and easy to read, helping you to quickly identify issues and troubleshoot problems.',
+							"Whether you're a seasoned developer or just starting out, Borgen is a powerful tool that can help you take your Node.js applications to the next level. So why not give it a try today and see for yourself what a difference it can make?",
+						]}
+					/>
+
+					<Project
+						title='BoostCTR'
+						techStack={`TypeScript+Tailwind+NodeJs+Express+MongoDB+Nginx`}
+						liveLink='http://boostctr.io'
+						images={[ctrhome, ctrsignup, ctrlogin, ctrcontact]}
+						longDesc={[
+							'This is a project I completed for H-educate is a database application built using TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx. This application is designed to provide users with a database of email subject lines that they can use in their marketing campaigns. The application uses JWT cookies for authentication, which ensures that only authorized users can access the database.',
+							'The application is built using a modular architecture, which makes it easy to scale and maintain. The backend is built using Node.js and Express, with MongoDB as the database. Nginx is used as the web server, which helps to improve performance and security',
+							'Overall, this project demonstrates my skills in building robust and scalable applications using the latest technologies. It showcases my skills in TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx, as well as my ability to implement secure authentication using JWT cookies.',
 						]}
 					/>
 				</div>

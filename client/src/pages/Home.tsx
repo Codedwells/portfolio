@@ -344,12 +344,21 @@ const Home = () => {
 							liveLink='http://boostctr.io'
 							shortDesc='This is a project I completed for H-educate is a database application built using TypeScript, Tailwind, Node.js, MongoDB, Express, and Nginx. This application is designed to provide users with a database of email subject lines that they can use in their marketing campaigns. The application uses JWT cookies for authentication, which ensures that only authorized users can access the database.'
 						/>
+
 						<Project
 							title='Borgen'
 							techStack={`TypeScript+NodeJs+Express+Chalk`}
 							liveLink='https://www.npmjs.com/package/borgen'
 							github='https://github.com/Codedwells/Borgen'
 							shortDesc='Borgen is a powerful HTTP logger middleware for Node.js, designed to help developers track HTTP requests and responses in their applications. With Borgen, you can easily customize the color scheme of your logs, allowing you to quickly identify different types of requests and responses. Built using TypeScript, Borgen is highly flexible and can be easily integrated into your Express applications. With Borgen your logs will be colorful and easy to read'
+						/>
+
+						<Project
+							title='Dashboard'
+							techStack={`React+TypeScript+ChartJs+TailwindCSS+HeroIcons`}
+							liveLink='https://react-admindash.vercel.app'
+							github='https://github.com/Codedwells/Admin-Dashboard-React-Ts'
+							shortDesc='The dashboard is built using the popular React library and TypeScript, which provides type checking and enhances code readability. The data visualization is powered by ChartJs, which allows administrators to easily monitor trends and identify anomalies. To make the dashboard visually appealing and user-friendly, TailwindCSS is utilized for styling and HeroIcons for icons'
 						/>
 					</div>
 					<svg
