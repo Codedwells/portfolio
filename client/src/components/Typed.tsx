@@ -3,9 +3,12 @@ import { TypeAnimation } from 'react-type-animation';
 type propType = {
 	color: string;
 	seque: string;
+	fontSize:string;
+	fontFamily:string;
+	fontWeight:number
 };
 
-const Typed = ({ color, seque }: propType) => {
+const Typed = ({ color, seque,fontSize,fontFamily,fontWeight }: propType) => {
 	return (
 		<TypeAnimation
 			sequence={
@@ -36,10 +39,10 @@ const Typed = ({ color, seque }: propType) => {
 			cursor={true}
 			repeat={Infinity}
 			style={{
-				fontSize: seque === 'world' ? '2rem' : '1.4rem',
-				fontFamily: 'Raleway',
+				fontSize,
+				fontFamily,
 				color,
-				fontWeight: 500,
+				fontWeight,
 				marginLeft: `${window.innerWidth < 484 ? '1rem' : 0}`,
 			}}
 		/>

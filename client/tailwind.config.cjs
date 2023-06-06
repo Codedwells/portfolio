@@ -7,7 +7,8 @@ module.exports = {
 			fontFamily: {
 				Raleway: ['Raleway', 'sans-serif'],
 				Poppins: ['Poppins', 'sans-serif'],
-				Ubuntu: ['Ubuntu', 'sans-serif'],
+				Nunito: ['Nunito', 'sans-serif'],
+				Marker:['Permanent Marker','cursive'],
 				sans: ['Montserrat', 'sans-serif'],
 			},
 		},
