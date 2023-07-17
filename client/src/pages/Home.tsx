@@ -8,10 +8,7 @@ import Typed from '../components/Typed';
 import Project from '../components/Project';
 
 import heroImage from '../assets/hero.jpeg';
-import hashnode from '../assets/hashnode-icon-svgrepo-com.svg';
-import linkedin from '../assets/linkedin-svgrepo-com.svg';
 import github from '../assets/logo-github-svgrepo-com.svg';
-import twitter from '../assets/twitter-3-logo-svgrepo-com.svg';
 import js from '../assets/javascript.png';
 import ts from '../assets/typescript.png';
 import mongo from '../assets/mongodb.png';
@@ -23,7 +20,7 @@ import postman from '../assets/postman.png';
 import figma from '../assets/figma.png';
 import nextjs from '../assets/nextjs-icon.svg';
 import expressjs from '../assets/expressjs.svg';
-import resume from '../assets/resume/Abel_Misiocha.pdf';
+import resume from '../assets/resume/Resume-Abel-Misiocha.pdf';
 import { FaGithubAlt, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { SiHashnode } from 'react-icons/si';
 
