@@ -1,1 +1,8 @@
-## Welcome to v2
+## v2 porfolio for 2024
+
+### Build using
+- Nextjs
+- TailwindCSS
+- Typescript
+- Supabase
+
