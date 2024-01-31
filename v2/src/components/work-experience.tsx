@@ -43,9 +43,9 @@ type CardProps = {
 
 const Card = ({ timeline, title, location, description }: CardProps) => {
 	return (
-		<div className='flex gap-2'>
-			<p className='w-[15%] text-sm text-gray-400'>{timeline}</p>
-			<div className='w-[85%] space-y-1'>
+		<div className='flex flex-col-reverse md:flex-row gap-2'>
+			<p className='md:w-[15%] text-sm text-gray-400'>{timeline}</p>
+			<div className='md:w-[85%] space-y-1'>
 				<h3>{title}</h3>
 				<p className='flex items-center gap-1 text-sm text-gray-400'>
 					<MapPin size={16} />
