@@ -73,7 +73,7 @@ const Card = ({
 						width={width}
 						height={height}
 						alt={`${title} screenshot`}
-						className='w-[200px] rounded-md shadow-md'
+						className='md:w-[200px] rounded-md shadow-md'
 					/>
 				</div>
 			</div>
