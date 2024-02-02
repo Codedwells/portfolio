@@ -62,7 +62,7 @@ const Social = ({ title, icon, username, link }: CardProps) => {
 			</div>
 
 			<div className='space-y-1 md:w-[85%]'>
-				<a href={link} className='flex items-start text-sm'>
+				<a href={link} target='_blank' className='flex items-start text-sm'>
 					<span>{username}</span>
 					<ArrowUpRight size={16} />
 				</a>
