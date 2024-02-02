@@ -1,11 +1,28 @@
+'use client'
+
 import { cn } from '@/lib/utils'
-import { Send } from 'lucide-react'
+import { Info, Send } from 'lucide-react'
+import { toast } from 'sonner'
 
 type ContactMeProps = {
 	className?: string
 }
 
 export default function ContactMe({ className }: ContactMeProps) {
+	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault()
+		toast(
+			'I will be adding this feature soon! Feel free to reach out to me on  Twitter',{
+                unstyled: true,
+                classNames:{
+                 toast: 'bg-gray-900 text-gray-400 p-3 flex items-center gap-2 text-sm rounded-lg border border-gray-800',
+                },
+                icon: <Info size={18} />,
+                duration: 5000,
+
+            }
+		)
+	}
 	return (
 		<div
 			className={cn(
@@ -19,7 +36,7 @@ export default function ContactMe({ className }: ContactMeProps) {
 				Hello there! I would love to hear from you.
 			</p>
 
-			<form className='mt-3 flex gap-2'>
+			<form onSubmit={handleSubmit} className='mt-3 flex gap-2'>
 				<input
 					type='text'
 					placeholder='Leave a message...'
