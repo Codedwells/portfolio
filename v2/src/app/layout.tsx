@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
 	title: 'Abel Misiocha',
 	description: "Abel Misiocha's personal website",
-	metadataBase: new URL('https://abeldev.site'),
+	metadataBase: new URL('https://abeldev-porfolio.vercel.app'),
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
