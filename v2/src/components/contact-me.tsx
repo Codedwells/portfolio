@@ -65,7 +65,7 @@ const Pointer = ({ className }: { className?: string }) => {
 					<path
 						d='M26.5 11V10.5H26H25.3137C23.3246 10.5 21.4169 9.70982 20.0104 8.3033L14.7678 3.06066C13.7915 2.08435 12.2085 2.08435 11.2322 3.06066L5.98959 8.3033C4.58307 9.70982 2.67542 10.5 0.686293 10.5H0H-0.5V11V12V12.5H0H26H26.5V12V11Z'
 						stroke='black'
-						stroke-opacity='0.05'
+						strokeOpacity='0.05'
 					></path>
 				</g>
 			</g>
@@ -81,10 +81,10 @@ const Pointer = ({ className }: { className?: string }) => {
 					width='36'
 					height='19.1716'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
 					<feFlood
-						flood-opacity='0'
+						floodOpacity='0'
 						result='BackgroundImageFix'
 					></feFlood>
 					<feColorMatrix

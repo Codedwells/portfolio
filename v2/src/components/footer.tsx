@@ -1,5 +1,11 @@
 import { cn } from '@/lib/utils'
-import { ArrowUpRight } from 'lucide-react'
+import {
+	ArrowUpRight,
+	Github,
+	Linkedin,
+	Newspaper,
+	Twitter
+} from 'lucide-react'
 
 type ProjectsProps = {
 	className?: string
@@ -13,18 +19,27 @@ export default function Footer({ className }: ProjectsProps) {
 			<div className='mt-4 space-y-2'>
 				<Social
 					title='Twitter'
-					username='@codedwells'
-					link='https://travellic.com'
+					icon={<Twitter size={16} />}
+					username='@themoon_dev'
+					link='https://twitter.com/themoon_dev'
 				/>
 				<Social
-					title='Twitter'
-					username='@codedwells'
-					link='https://travellic.com'
+					title='Linkedin'
+					icon={<Linkedin size={16} />}
+					username='@devabel'
+					link='https://linkedin.com/in/devabel'
 				/>
 				<Social
-					title='Twitter'
+					title='Github'
+					icon={<Github size={16} />}
 					username='@codedwells'
-					link='https://travellic.com'
+					link='https://github.com/codedwells'
+				/>
+				<Social
+					title='Blog'
+					icon={<Newspaper size={16} />}
+					username='@abeldev'
+					link='https://blog.abeldev.site'
 				/>
 			</div>
 		</footer>
@@ -33,14 +48,19 @@ export default function Footer({ className }: ProjectsProps) {
 
 type CardProps = {
 	title: string
+	icon: React.ReactNode
 	username: string
 	link: string
 }
 
-const Social = ({ title, username, link }: CardProps) => {
+const Social = ({ title, icon, username, link }: CardProps) => {
 	return (
 		<div className='flex gap-2'>
-			<p className='text-sm text-gray-400 md:w-[15%]'>{title}</p>
+			<div className='flex items-center gap-1 md:w-[15%]'>
+				{icon}
+				<p className='text-sm text-gray-400'>{title}</p>
+			</div>
+
 			<div className='space-y-1 md:w-[85%]'>
 				<a href={link} className='flex items-start text-sm'>
 					<span>{username}</span>
