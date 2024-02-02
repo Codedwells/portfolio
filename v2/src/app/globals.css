@@ -22,3 +22,14 @@
     text-wrap: balance;
   }
 }
+
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    width:  0;
+}
