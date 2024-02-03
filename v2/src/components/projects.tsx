@@ -18,7 +18,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='Travellic landing page'
 					description='A bus booking system that simplifies planned travels'
-                    link='https://travellic.vercel.app/'
+					link='https://travellic.vercel.app/'
 				/>
 
 				<Card
@@ -28,7 +28,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='The MoonHQ landing page'
 					description='A bus booking system that simplifies planned travels'
-                    link="https://moonhq.org/"
+					link='https://moonhq.org/'
 				/>
 
 				<Card
@@ -38,7 +38,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='Flow Node Editor'
 					description='A bus booking system that simplifies planned travels'
-                    link="https://node-flow-editor.netlify.app/"
+					link='https://node-flow-editor.netlify.app/'
 				/>
 
 				<Card
@@ -48,7 +48,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='FreeAIkit Web App'
 					description='A bus booking system that simplifies planned travels'
-                    link='https://freeaikit.com/'
+					link='https://freeaikit.com/'
 				/>
 
 				<Card
@@ -58,7 +58,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='Leaf Web App'
 					description='A bus booking system that simplifies planned travels'
-                    link="https://agri-solve.vercel.app/"
+					link='https://agri-solve.vercel.app/'
 				/>
 
 				<Card
@@ -68,7 +68,17 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='BookBindr'
 					description='A bus booking system that simplifies planned travels'
-                    link="https://book-bindr.vercel.app/"
+					link='https://book-bindr.vercel.app/'
+				/>
+
+				<Card
+					timeline='2023'
+					image='/borgen.webp'
+					height={2424}
+					width={1547}
+					title='Borgen'
+					description='The custom logger for your Node.js applications'
+					link='https://book-bindr.vercel.app/'
 				/>
 
 				<Card
@@ -78,7 +88,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='v1 of My Personal Website'
 					description='A bus booking system that simplifies planned travels'
-                    link="https://abeldev.site/"
+					link='https://abeldev.site/'
 				/>
 
 				<Card
@@ -88,7 +98,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='Jokes Outright'
 					description='A bus booking system that simplifies planned travels'
-                    link='https://jokesoutright.netlify.app/'
+					link='https://jokesoutright.netlify.app/'
 				/>
 			</div>
 		</section>
@@ -99,7 +109,7 @@ type CardProps = {
 	timeline: string
 	title: string
 	image: string
-    link: string
+	link: string
 	width: number
 	height: number
 	description: string
@@ -110,7 +120,7 @@ const Card = ({
 	width,
 	height,
 	timeline,
-    link,
+	link,
 	title,
 	description
 }: CardProps) => {
@@ -118,7 +128,13 @@ const Card = ({
 		<div className='flex flex-col-reverse gap-2 md:flex-row'>
 			<p className='text-sm text-gray-400 md:w-[15%]'>{timeline}</p>
 			<div className='space-y-1 md:w-[85%]'>
-				<a href={link} target='_blank' className='hover:underline underline-offset-2'>{title}</a>
+				<a
+					href={link}
+					target='_blank'
+					className='underline-offset-2 hover:underline'
+				>
+					{title}
+				</a>
 
 				<p className='text-sm text-gray-400'>{description}</p>
 
