@@ -1,28 +1,66 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import { Info, Send } from 'lucide-react'
 import { toast } from 'sonner'
+import { cn } from '@/lib/utils'
+import emailjs from '@emailjs/browser'
+import { useRef, useState } from 'react'
+import { Loader, MailCheck, Send, XCircle } from 'lucide-react'
 
 type ContactMeProps = {
 	className?: string
 }
 
 export default function ContactMe({ className }: ContactMeProps) {
-	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-		e.preventDefault()
-		toast(
-			'I will be adding this feature soon! Feel free to reach out to me on  Twitter',{
-                unstyled: true,
-                classNames:{
-                 toast: 'bg-gray-900 text-gray-400 p-3 flex items-center gap-2 text-sm rounded-lg border border-gray-800',
-                },
-                icon: <Info size={18} />,
-                duration: 5000,
+	const [isSending, setIsSending] = useState(false)
+	const form = useRef(null)
 
-            }
-		)
+	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		setIsSending(true)
+		e.preventDefault()
+
+		if (form.current) {
+			emailjs
+				.sendForm(
+					`${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,
+					'template_ah42zvb',
+					form.current,
+					{
+						publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+					}
+				)
+				.then(
+					() => {
+						toast(
+							'I just received your message! I will get back to you soon',
+							{
+								unstyled: true,
+								classNames: {
+									toast: 'bg-emerald-600/80 text-gray-400 py-3 leading-3 flex items-center gap-4 px-4 text-sm rounded-lg border border-emerald-600'
+								},
+								icon: <MailCheck size={24} />,
+								duration: 5000
+							}
+						)
+						setIsSending(false)
+					},
+					() => {
+						toast(
+							'Oops! Something went wrong. Remember you can always reach me on X.',
+							{
+								unstyled: true,
+								classNames: {
+									toast: 'bg-red-700/50 text-gray-400 leading-3 py-3 px-4 flex items-center gap-2 text-sm rounded-lg border border-red-700'
+								},
+								icon: <XCircle size={24} />,
+								duration: 5000
+							}
+						)
+						setIsSending(false)
+					}
+				)
+		}
 	}
+
 	return (
 		<div
 			className={cn(
@@ -36,18 +74,38 @@ export default function ContactMe({ className }: ContactMeProps) {
 				Hello there! I would love to hear from you.
 			</p>
 
-			<form onSubmit={handleSubmit} className='mt-3 flex gap-2'>
-				<input
-					type='text'
-					placeholder='Leave a message...'
-					className='border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md bg-gray-900 px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50'
-				/>
+			<form
+				ref={form}
+				onSubmit={handleSubmit}
+				className='mt-3 flex gap-2'
+			>
+				<div className='flex flex-1 flex-col gap-2 md:flex-row'>
+					<input
+						type='text'
+						name='message'
+						placeholder='Leave a message...'
+						className='border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md bg-gray-900 px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50'
+					/>
+					<input
+						type='email'
+						placeholder='Email'
+						name='user_email'
+						className='border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md bg-gray-900 px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50'
+					/>
+				</div>
+
 				<button
 					type='submit'
-					className='flex w-fit items-center justify-center gap-1  rounded-md bg-gray-900 px-2 py-1 text-xs leading-3 tracking-tight text-gray-400 hover:opacity-80'
+					className='flex w-fit items-center justify-center gap-1  rounded-md bg-gray-900 px-6 py-1 text-xs leading-3 tracking-tight text-gray-400 hover:opacity-80 md:px-2'
 				>
-					<Send className='' size={15} />
-					<span>Send</span>
+					{isSending ? (
+						<Loader size={15} className='mx-2 animate-spin' />
+					) : (
+						<>
+							<Send className='' size={15} />
+							<span className='hidden md:inline'>Send</span>
+						</>
+					)}
 				</button>
 			</form>
 		</div>
