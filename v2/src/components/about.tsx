@@ -10,7 +10,7 @@ export default function About({ className }: AboutProps) {
 			<h1 className='text-sm text-gray-300'>About</h1>
 
 			<p className='leading-4 mt-2'>
-				Hey there! I'm Abel, a passionate software engineeri
+				Hey there! I'm Abel, a passionate software engineer
 				specializing on web development.
 			</p>
 
