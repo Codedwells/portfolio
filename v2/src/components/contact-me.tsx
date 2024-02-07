@@ -12,6 +12,7 @@ type ContactMeProps = {
 
 export default function ContactMe({ className }: ContactMeProps) {
 	const [isSending, setIsSending] = useState(false)
+	const [message, setMessage] = useState({ message: '', email: '' })
 	const form = useRef(null)
 
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -19,6 +20,19 @@ export default function ContactMe({ className }: ContactMeProps) {
 		e.preventDefault()
 
 		if (form.current) {
+			if (message.message === '' || message.email === '') {
+				console.log(form.current)
+				toast('Please fill in all fields in the form provided', {
+					unstyled: true,
+					classNames: {
+						toast: 'bg-red-700/50 text-gray-400 leading-3 py-3 px-4 flex items-center gap-2 text-sm rounded-lg border border-red-700'
+					},
+					icon: <XCircle size={24} />,
+					duration: 5000
+				})
+				return setIsSending(false)
+			}
+
 			emailjs
 				.sendForm(
 					`${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,
@@ -41,6 +55,10 @@ export default function ContactMe({ className }: ContactMeProps) {
 								duration: 5000
 							}
 						)
+
+						// Reset form
+						setMessage({ message: '', email: '' })
+
 						setIsSending(false)
 					},
 					() => {
@@ -85,12 +103,20 @@ export default function ContactMe({ className }: ContactMeProps) {
 						name='message'
 						placeholder='Leave a message...'
 						className='border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md bg-gray-900 px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50'
+						value={message.message}
+						onChange={(e) =>
+							setMessage({ ...message, message: e.target.value })
+						}
 					/>
 					<input
 						type='email'
 						placeholder='Email'
 						name='user_email'
 						className='border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md bg-gray-900 px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50'
+						value={message.email}
+						onChange={(e) =>
+							setMessage({ ...message, email: e.target.value })
+						}
 					/>
 				</div>
 
