@@ -17,8 +17,18 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='Travellic landing page'
-					description='A bus booking system that simplifies planned travels'
-					link='https://travellic.vercel.app/'
+					description='A bus booking system that simplifies planned travels. Built with Next.js,TypeScript and TailwindCSS'
+					link='https://travellic.vercel.app'
+				/>
+
+				<Card
+					timeline='2024'
+					image='/opengraph-image.webp'
+					height={2424}
+					width={1547}
+					title='v2 of My Personal Website'
+					description='My personal website built with Next.js, TypeScript , TailwindCSS and EmailJs'
+					link='#'
 				/>
 
 				<Card
@@ -27,7 +37,7 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='The MoonHQ landing page'
-					description='A bus booking system that simplifies planned travels'
+					description='The MoonHQ company website. Built with Next.js,TypeScript, TailwindCSS and Supabase.'
 					link='https://moonhq.org/'
 				/>
 
@@ -37,7 +47,7 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='Flow Node Editor'
-					description='A bus booking system that simplifies planned travels'
+					description='A simple node editor. Build with Solid.js and TailwindCSS.'
 					link='https://node-flow-editor.netlify.app/'
 				/>
 
@@ -47,7 +57,7 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='FreeAIkit Web App'
-					description='A bus booking system that simplifies planned travels'
+					description='A platform for free AI tools and resources. Built with Next.js, TypeScript, TailwindCSS, NodeJs, NGINX and MongoDB'
 					link='https://freeaikit.com/'
 				/>
 
@@ -57,7 +67,7 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='Leaf Web App'
-					description='A bus booking system that simplifies planned travels'
+					description='Leaf Web App for AgriSolve. Built with Next.js, TypeScript, TailwindCSS (Hackathon Project)'
 					link='https://agri-solve.vercel.app/'
 				/>
 
@@ -67,7 +77,7 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='BookBindr'
-					description='A bus booking system that simplifies planned travels'
+					description='A book matching platform for readers. Built with Next.js, TypeScript, TailwindCSS, NodeJs'
 					link='https://book-bindr.vercel.app/'
 				/>
 
@@ -87,7 +97,7 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='v1 of My Personal Website'
-					description='A bus booking system that simplifies planned travels'
+					description='My personal website built with React.js and TailwindCSS'
 					link='https://abeldev.site/'
 				/>
 
@@ -97,8 +107,18 @@ export default function Projects({ className }: ProjectsProps) {
 					height={2424}
 					width={1547}
 					title='Jokes Outright'
-					description='A bus booking system that simplifies planned travels'
+					description='A humor website for jokes and memes. Built with React.js'
 					link='https://jokesoutright.netlify.app/'
+				/>
+
+				<Card
+					timeline='2021'
+					image='/v0_porfolio.webp'
+					height={2424}
+					width={1547}
+					title='v0 of My Personal Website'
+					description='My personal website built with HTML, CSS and JavaScript'
+					link='https://codedwells.github.io/'
 				/>
 			</div>
 		</section>
