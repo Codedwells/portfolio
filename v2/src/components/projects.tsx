@@ -88,7 +88,7 @@ export default function Projects({ className }: ProjectsProps) {
 					width={1547}
 					title='Borgen'
 					description='The custom logger for your Node.js applications'
-					link='https://book-bindr.vercel.app/'
+					link='https://www.npmjs.com/package/borgen'
 				/>
 
 				<Card
